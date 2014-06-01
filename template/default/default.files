@@ -1,0 +1,9 @@
+instance_cpp.tmplt=%[[INSTANCE_CLASS]].cpp
+instance_hpp.tmplt=%[[INSTANCE_CLASS]].hpp
+module_cpp.tmplt=%[[MODULE_CLASS]].cpp
+plugin_html.tmplt=%[[PLUGIN_TARGET]].html
+plugin_props.tmplt=%[[PLUGIN_TARGET]].props
+plugin_rc.tmplt=%[[PLUGIN_TARGET]].rc
+plugin_vcxproj.tmplt=%[[PLUGIN_TARGET]].vcxproj
+plugin_vcxproj_filters.tmplt=%[[PLUGIN_TARGET]].vcxproj.filters
+shaker_home_props.tmplt=shaker_home.props

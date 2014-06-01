@@ -1,0 +1,22 @@
+#include <ppapi/cpp/module.h>
+#include "%[[INSTANCE_CLASS]].hpp"
+
+namespace %[[PLUGIN_NAMESPACE]]
+{
+	class %[[MODULE_CLASS]] : public pp::Module
+	{
+	public:
+		pp::Instance* CreateInstance(PP_Instance instance) override
+		{
+			return new (std::nothrow) %[[INSTANCE_CLASS]](instance);
+		}
+	};
+}
+
+namespace pp
+{
+	Module* CreateModule()
+	{
+		return new %[[PLUGIN_NAMESPACE]]::%[[MODULE_CLASS]]();
+	}
+}

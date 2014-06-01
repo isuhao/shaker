@@ -1,0 +1,15 @@
+#pragma once
+
+#include <shaker/cpp/logger.hpp>
+
+namespace %[[PLUGIN_NAMESPACE]]
+{
+	class %[[INSTANCE_CLASS]] : public pp::Logger
+	{
+	public:
+		explicit %[[INSTANCE_CLASS]](PP_Instance instance);
+		~%[[INSTANCE_CLASS]]();
+
+		void HandleMessage(const pp::Var& message) override;
+	};
+}

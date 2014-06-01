@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>%[[PLUGIN_NAME]]</title>
+  <script type="text/javascript">
+    function HandleMessage(message_event)
+    {
+      if (message_event.data)
+      {
+      }
+    }
+
+    function Initialize() {
+      var plugin = document.getElementById('plugin');
+      plugin.addEventListener('message', HandleMessage, false);
+      plugin.postMessage('PageInitialized');
+    }
+
+    document.addEventListener('DOMContentLoaded', Initialize, false);
+  </script>
+</head>
+
+<body>
+  <embed id="plugin" type="%[[PLUGIN_MIMETYPE]]" width="0" height="0"/>
+</body>
+</html>

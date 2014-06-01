@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" >
+    <Import Project="shaker_home.props" />
+    <Import Project="$(SHAKER_HOME)\vstudio\base.props" />
+    <Import Project="$(SHAKER_HOME)\vstudio\shakers.props" />
+    <Import Project="$(SHAKER_HOME)\vstudio\$(Configuration).props" />
+    <Import Project="$(SHAKER_HOME)\vstudio\$(Platform).props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_PropertySheetDisplayName>%[[PLUGIN_NAME]]</_PropertySheetDisplayName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

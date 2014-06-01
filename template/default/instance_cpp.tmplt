@@ -1,0 +1,17 @@
+#include "%[[INSTANCE_CLASS]].hpp"
+
+namespace %[[PLUGIN_NAMESPACE]]
+{
+	%[[INSTANCE_CLASS]]::%[[INSTANCE_CLASS]](PP_Instance instance)
+		: Logger(instance)
+	{
+	}
+
+	%[[INSTANCE_CLASS]]::~%[[INSTANCE_CLASS]]()
+	{
+	}
+
+	void %[[INSTANCE_CLASS]]::HandleMessage(const pp::Var& message)
+	{
+	}
+}
