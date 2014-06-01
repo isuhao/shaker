@@ -1,0 +1,1035 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="NaCl SDK">
+      <UniqueIdentifier>{ef7ab864-2d5c-4c7a-8524-e2e91b0cbe1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include">
+      <UniqueIdentifier>{ee011eaf-6bc1-47cc-8042-7e970ecf4b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\src">
+      <UniqueIdentifier>{fa40947b-e3c6-4fcc-90a4-b1b66c54c8cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\src\jsoncpp">
+      <UniqueIdentifier>{c5fa1426-5e53-48fd-833a-0498b36a1ab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\src\ppapi_cpp">
+      <UniqueIdentifier>{061af9d2-592c-4b84-b4cf-1d117cc47f21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\json">
+      <UniqueIdentifier>{2c31764f-0a52-4d49-aeae-1c7bb4eb9a31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\ppapi">
+      <UniqueIdentifier>{768841d5-a690-4f36-8c3c-e85ba7952b6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\ppapi\c">
+      <UniqueIdentifier>{1a60f4b0-7cfa-4140-baf8-f338932e22b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\ppapi\c\dev">
+      <UniqueIdentifier>{f1477fa9-5131-493a-be97-2b8496498d20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\ppapi\c\private">
+      <UniqueIdentifier>{0ea35d85-9815-4926-ae23-6a9c89d79127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\ppapi\c\extensions">
+      <UniqueIdentifier>{594f40b3-c1f9-4ab2-98b8-544540397fc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\ppapi\c\extensions\dev">
+      <UniqueIdentifier>{8fce8399-4c4b-4551-8905-6632346c713b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\ppapi\cpp">
+      <UniqueIdentifier>{de4891ac-b29b-47d7-aecd-3c178ef39dc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\ppapi\cpp\dev">
+      <UniqueIdentifier>{cabf4893-fbb4-4884-bfdf-4de4ead44c65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\ppapi\cpp\extensions">
+      <UniqueIdentifier>{5ef35dee-dac8-4d41-a010-9be17cbcafeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\ppapi\cpp\extensions\dev">
+      <UniqueIdentifier>{e3fce16f-9cb5-420e-b4b9-5da241cd66ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NaCl SDK\include\ppapi\cpp\private">
+      <UniqueIdentifier>{504ca919-20b0-4bf2-b541-52c335f2cce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaker">
+      <UniqueIdentifier>{f1f9e147-b9b2-4361-ac8a-e397e57cff1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaker\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Shaker\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Shaker\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\deprecated_bool.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\pp_cursor_type_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\pp_optional_structs_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\pp_print_settings_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\pp_video_capture_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\pp_video_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_alarms_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_audio_input_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_buffer_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_char_set_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_crypto_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_cursor_control_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_device_ref_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_file_chooser_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_find_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_font_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_gles_chromium_texture_mapping_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_graphics_2d_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_ime_input_event_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_memory_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_opengles2ext_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_printing_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_scrollbar_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_text_input_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_trace_event_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_truetype_font_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_url_util_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_var_deprecated.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_video_capture_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_video_decoder_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_view_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_widget_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppb_zoom_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppp_class_deprecated.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppp_find_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppp_network_state_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppp_printing_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppp_scrollbar_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppp_selection_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppp_text_input_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppp_video_capture_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppp_video_decoder_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppp_widget_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\dev\ppp_zoom_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\extensions\dev\ppb_ext_socket_dev.h">
+      <Filter>NaCl SDK\include\ppapi\c\extensions\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\pp_file_handle.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_ext_crx_file_system_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_file_io_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_file_ref_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_host_resolver_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_isolated_file_system_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_net_address_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_output_protection_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_tcp_server_socket_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_tcp_socket_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_udp_socket_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_uma_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\private\ppb_x509_certificate_private.h">
+      <Filter>NaCl SDK\include\ppapi\c\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\alarms_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\array_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\audio_input_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\buffer_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\crypto_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\cursor_control_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\device_ref_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\file_chooser_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\find_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\font_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\graphics_2d_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\ime_input_event_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\may_own_ptr_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\memory_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\optional_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\printing_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\scriptable_object_deprecated.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\scrollbar_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\selection_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\string_wrapper_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\struct_wrapper_output_traits_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\text_input_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\to_c_type_converter_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\truetype_font_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\url_util_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\video_capture_client_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\video_capture_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\video_decoder_client_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\video_decoder_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\view_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\widget_client_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\widget_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\dev\zoom_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\extensions\dev\socket_dev.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\extensions\dev</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\extensions\dict_field.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\extensions\ext_output_traits.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\extensions\from_var_converter.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\extensions\optional.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\extensions\to_var_converter.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\ext_crx_file_system_private.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\file_io_private.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\host_resolver_private.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\isolated_file_system_private.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\net_address_private.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\output_protection_private.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\pass_file_handle.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\tcp_server_socket_private.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\tcp_socket_private.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\udp_socket_private.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\uma_private.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\private\x509_certificate_private.h">
+      <Filter>NaCl SDK\include\ppapi\cpp\private</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\array_output.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\audio.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\audio_buffer.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\audio_config.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\completion_callback.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\core.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\directory_entry.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\file_io.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\file_ref.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\file_system.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\fullscreen.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\graphics_2d.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\graphics_3d.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\graphics_3d_client.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\host_resolver.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\image_data.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\input_event.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\instance.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\instance_handle.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\logging.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\media_stream_audio_track.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\media_stream_video_track.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\message_loop.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\module.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\module_embedder.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\module_impl.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\mouse_cursor.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\mouse_lock.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\net_address.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\network_list.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\network_monitor.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\network_proxy.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\output_traits.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\pass_ref.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\point.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\rect.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\resource.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\size.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\tcp_socket.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\text_input_controller.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\touch_point.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\udp_socket.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\url_loader.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\url_request_info.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\url_response_info.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\var.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\var_array.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\var_array_buffer.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\var_dictionary.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\video_frame.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\view.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\cpp\websocket.h">
+      <Filter>NaCl SDK\include\ppapi\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_array_output.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_bool.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_completion_callback.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_directory_entry.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_errors.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_file_info.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_graphics_3d.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_input_event.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_instance.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_macros.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_module.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_point.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_rect.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_resource.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_size.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_stdint.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_time.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_touch_point.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\pp_var.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_audio.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_audio_buffer.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_audio_config.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_console.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_core.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_file_io.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_file_mapping.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_file_ref.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_file_system.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_fullscreen.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_gamepad.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_graphics_2d.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_graphics_3d.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_host_resolver.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_image_data.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_input_event.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_instance.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_media_stream_audio_track.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_media_stream_video_track.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_message_loop.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_messaging.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_mouse_cursor.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_mouse_lock.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_net_address.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_network_list.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_network_monitor.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_network_proxy.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_opengles2.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_tcp_socket.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_text_input_controller.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_udp_socket.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_url_loader.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_url_request_info.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_url_response_info.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_var.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_var_array.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_var_array_buffer.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_var_dictionary.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_video_frame.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_view.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppb_websocket.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppp.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppp_graphics_3d.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppp_input_event.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppp_instance.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppp_messaging.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\ppapi\c\ppp_mouse_lock.h">
+      <Filter>NaCl SDK\include\ppapi\c</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\json\assertions.h">
+      <Filter>NaCl SDK\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\json\autolink.h">
+      <Filter>NaCl SDK\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\json\config.h">
+      <Filter>NaCl SDK\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\json\features.h">
+      <Filter>NaCl SDK\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\json\forwards.h">
+      <Filter>NaCl SDK\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\json\json.h">
+      <Filter>NaCl SDK\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\json\reader.h">
+      <Filter>NaCl SDK\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\json\value.h">
+      <Filter>NaCl SDK\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="$(NACL_SDK)\include\json\writer.h">
+      <Filter>NaCl SDK\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\shaker\cpp\logger.hpp">
+      <Filter>Shaker\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\alarms_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\array_output.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\audio.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\audio_buffer.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\audio_config.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\audio_input_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\buffer_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\core.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\crypto_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\cursor_control_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\device_ref_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\directory_entry.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\file_chooser_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\file_io.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\file_ref.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\file_system.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\find_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\font_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\fullscreen.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\graphics_2d.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\graphics_2d_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\graphics_3d.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\graphics_3d_client.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\host_resolver.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\image_data.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\ime_input_event_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\input_event.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\instance.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\instance_handle.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\lock.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\media_stream_audio_track.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\media_stream_video_track.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\memory_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\message_loop.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\module.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\mouse_cursor.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\mouse_lock.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\net_address.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\network_list.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\network_monitor.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\network_proxy.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\paint_aggregator.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\paint_manager.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\ppp_entrypoints.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\printing_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\rect.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\resource.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\scriptable_object_deprecated.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\scrollbar_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\selection_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\simple_thread.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\socket_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\string_wrapper_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\tcp_socket.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\text_input_controller.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\text_input_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\truetype_font_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\udp_socket.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\url_loader.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\url_request_info.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\url_response_info.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\url_util_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\var.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\var_array.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\var_array_buffer.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\var_dictionary.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\video_capture_client_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\video_capture_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\video_decoder_client_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\video_decoder_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\video_frame.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\view.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\view_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\websocket.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\websocket_api.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\widget_client_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\widget_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\ppapi_cpp\zoom_dev.cc">
+      <Filter>NaCl SDK\src\ppapi_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\jsoncpp\json_reader.cpp">
+      <Filter>NaCl SDK\src\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\jsoncpp\json_value.cpp">
+      <Filter>NaCl SDK\src\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="$(NACL_SDK)\src\jsoncpp\json_writer.cpp">
+      <Filter>NaCl SDK\src\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaker\cpp\logger.cc">
+      <Filter>Shaker\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
