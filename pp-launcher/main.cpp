@@ -185,6 +185,17 @@ std::string escape(const std::string& arg)
 	return arg;
 }
 
+std::string module_dir()
+{
+	char buffer[2048];
+	GetModuleFileNameA(nullptr, buffer, sizeof(buffer));
+	auto slash = strrchr(buffer, '\\');
+	if (slash)
+		slash[1] = 0;
+
+	return buffer;
+}
+
 int main(int argc, char* argv[])
 {
 	if (argc < 2)
@@ -193,13 +204,7 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	char buffer[2048];
-	GetModuleFileNameA(nullptr, buffer, sizeof(buffer));
-	auto slash = strrchr(buffer, '\\');
-	if (slash)
-		slash[1] = 0;
-
-	auto plugins = PluginInfos(buffer);
+	auto plugins = PluginInfos(module_dir());
 	if (plugins.empty())
 	{
 		printf("No modules with VERISONINFO and MIMEType found.\n");
