@@ -219,6 +219,43 @@ std::string module_dir()
 	return buffer;
 }
 
+std::string lastError(DWORD dw)
+{
+	LPVOID lpMsgBuf;
+
+	FormatMessage(
+		FORMAT_MESSAGE_ALLOCATE_BUFFER |
+		FORMAT_MESSAGE_FROM_SYSTEM |
+		FORMAT_MESSAGE_IGNORE_INSERTS,
+		NULL,
+		dw,
+		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+		(LPTSTR)&lpMsgBuf,
+		0, NULL);
+
+	auto size = WideCharToMultiByte(CP_OEMCP, 0, (LPTSTR)lpMsgBuf, -1, nullptr, 0, nullptr, nullptr);
+	if (size < 1)
+	{
+		LocalFree(lpMsgBuf);
+		return "?";
+	}
+
+	auto msg_buf = (char*)malloc(size + 1);
+	if (!msg_buf)
+	{
+		LocalFree(lpMsgBuf);
+		return "?";
+	}
+
+	WideCharToMultiByte(CP_OEMCP, 0, (LPTSTR)lpMsgBuf, -1, msg_buf, size, nullptr, nullptr);
+	std::string out{ msg_buf };
+
+	free(msg_buf);
+	LocalFree(lpMsgBuf);
+
+	return out;
+}
+
 int main(int argc, char* argv[])
 {
 	if (argc < 2)
@@ -245,7 +282,8 @@ int main(int argc, char* argv[])
 
 	if (!CreateProcessA(argv[1], (char*)cmd.c_str(), nullptr, nullptr, TRUE, 0, nullptr, nullptr, &startup, &proc))
 	{
-		printf("CreateProcess failed (%d).\n", GetLastError());
+		DWORD dw = GetLastError();
+		printf("\n%s:\nerror %d: %s", argv[1], dw, lastError(dw));
 		return 1;
 	}
 
