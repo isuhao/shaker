@@ -9,6 +9,8 @@ __pycache__/
 .Python
 env/
 bin/
+out/
+int/
 build/
 develop-eggs/
 dist/
@@ -52,3 +54,7 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+*.opensdf
+*.sdf
+*.suo
+*.orig
