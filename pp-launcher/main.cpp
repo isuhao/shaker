@@ -3,6 +3,7 @@
 #include <sstream>
 #include <memory>
 #include <filesystem>
+#include <vector>
 
 namespace fs = std::tr2::sys;
 
@@ -135,12 +136,34 @@ std::string PluginInfo(const std::string& path)
 	return path + "#" + ProductName + "#" + FileDescription + "#" + FileVersion + ";" + MIMEType;
 }
 
-std::string PluginInfos(const std::string& dir)
+fs::path canonical(const fs::path& path)
+{
+	std::vector<fs::path> segments;
+	for (auto&& seg : fs::complete(path))
+	{
+		if (seg == ".") continue;
+		if (seg == ".." && segments.size() > 1)
+		{
+			segments.pop_back();
+			continue;
+		}
+		segments.push_back(seg);
+	}
+
+	auto out = segments.front();
+	segments.erase(segments.begin());
+	for (auto&& seg : segments)
+		out /= seg;
+
+	return out;
+}
+
+std::string PluginInfos(const std::string& dir = ".")
 {
 	std::string out;
 	bool first = true;
 
-	fs::directory_iterator cur{ dir }, end{};
+	fs::directory_iterator cur{ canonical(dir) }, end{};
 	for (; cur != end; ++cur)
 	{
 		auto&& entry = *cur;
@@ -204,7 +227,7 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	auto plugins = PluginInfos(module_dir());
+	auto plugins = PluginInfos();// module_dir());
 	if (plugins.empty())
 	{
 		printf("No modules with VERISONINFO and MIMEType found.\n");
