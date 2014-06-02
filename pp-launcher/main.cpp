@@ -256,12 +256,109 @@ std::string lastError(DWORD dw)
 	return out;
 }
 
+namespace env
+{
+	std::string get(const char* env)
+	{
+		char buffer[8192];
+		if (GetEnvironmentVariableA(env, buffer, sizeof(buffer)))
+			return buffer;
+
+		return{};
+	}
+
+
+	std::string chrome_exe(const char* env, const std::string& channel)
+	{
+		auto tmp = get(env);
+		if (tmp.empty())
+			return{};
+
+		fs::path exe{ tmp };
+		exe /= "Google";
+		exe /= channel;
+		exe /= "Application";
+		exe /= "chrome.exe";
+
+		if (fs::exists(exe))
+			return exe.file_string();
+
+		return{};
+	}
+
+	std::string machine(const std::string& channel)
+	{
+		auto tmp = chrome_exe("ProgramFiles(x86)", channel);
+		if (tmp.empty())
+			tmp = chrome_exe("ProgramFiles", channel);
+
+		return tmp;
+	}
+
+	std::string user(const std::string& channel)
+	{
+		return chrome_exe("LOCALAPPDATA", channel);
+	}
+
+	std::string chrome(const std::string& channel)
+	{
+		auto tmp = user(channel);
+		if (tmp.empty())
+			tmp = machine(channel);
+
+		return tmp;
+	}
+
+	std::string real_chrome(const std::string& variable)
+	{
+		/*printf("Known vars:\n"
+		"  user - %%LOCALAPPDATA%%/Chrome/Application/chrome.exe\n"
+		"  machine - %%ProgramFiles(x86)%%/Chrome/Application/chrome.exe or %%ProgramFiles%%/Chrome/Application/chrome.exe\n"
+		"  user_sxs - %%LOCALAPPDATA%%/Chrome SxS/Application/chrome.exe\n"
+		"  machine_sxs - %%ProgramFiles(x86)%%/Chrome SxS/Application/chrome.exe or %%ProgramFiles%%/Chrome SxS/Application/chrome.exe\n"
+		"  chrome - $user then $machine\n"
+		"  chrome_sxs - $user_sxs then $machine_sxs\n"
+		);*/
+
+		std::string channel = "Chrome";
+		std::string tmp = variable;
+		if (tmp.length() > 4 && tmp.substr(tmp.length() - 4) == "_sxs")
+		{
+			channel += " SxS";
+			tmp = tmp.substr(0, tmp.length() - 4);
+		}
+
+		if (tmp == "chrome")
+			return chrome(channel);
+		else if (tmp == "user")
+			return user(channel);
+		else if (tmp == "machine")
+			return machine(channel);
+
+		return{};
+	}
+
+}
+
 int main(int argc, char* argv[])
 {
 	if (argc < 2)
 	{
 		fprintf(stderr, "pp-launcher <chrome.exe> [<chrome switches>]\n");
 		return 1;
+	}
+
+	std::string realChrome;
+	if (*argv[1] == '$')
+	{
+		realChrome = env::real_chrome(argv[1] + 1);
+		if (realChrome.empty())
+		{
+			printf("No executable found for %s.\n", argv[1]);
+			return 1;
+		}
+		printf("%s: %s\n", argv[1], realChrome.c_str());
+		argv[1] = &realChrome[0];
 	}
 
 	auto plugins = PluginInfos();// module_dir());
