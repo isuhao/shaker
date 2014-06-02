@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" >
+%[[if:SOLUTION]]
+    <Import Project="..\shaker_home.props" />
+%[[else]]
     <Import Project="shaker_home.props" />
+%[[endif]]
     <Import Project="$(SHAKER_HOME)\vstudio\base.props" />
     <Import Project="$(SHAKER_HOME)\vstudio\shakers.props" />
     <Import Project="$(SHAKER_HOME)\vstudio\$(Configuration).props" />

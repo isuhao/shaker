@@ -3,7 +3,7 @@
 namespace %[[PLUGIN_NAMESPACE]]
 {
 	%[[INSTANCE_CLASS]]::%[[INSTANCE_CLASS]](PP_Instance instance)
-		: Logger(instance)
+		: pp::Logger(instance)
 	{
 	}
 
@@ -13,5 +13,6 @@ namespace %[[PLUGIN_NAMESPACE]]
 
 	void %[[INSTANCE_CLASS]]::HandleMessage(const pp::Var& message)
 	{
+		log["%[[INSTANCE_CLASS]] message"].direct(message);
 	}
 }

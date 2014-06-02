@@ -1,3 +1,15 @@
+%[[if:SOLUTION]]
+instance_cpp.tmplt=%[[PLUGIN_TARGET]]/%[[INSTANCE_CLASS]].cpp
+instance_hpp.tmplt=%[[PLUGIN_TARGET]]/%[[INSTANCE_CLASS]].hpp
+module_cpp.tmplt=%[[PLUGIN_TARGET]]/%[[MODULE_CLASS]].cpp
+plugin_html.tmplt=%[[PLUGIN_TARGET]]/%[[PLUGIN_TARGET]].html
+plugin_props.tmplt=%[[PLUGIN_TARGET]]/%[[PLUGIN_TARGET]].props
+plugin_rc.tmplt=%[[PLUGIN_TARGET]]/%[[PLUGIN_TARGET]].rc
+plugin_vcxproj.tmplt=%[[PLUGIN_TARGET]]/%[[PLUGIN_TARGET]].vcxproj
+plugin_vcxproj_filters.tmplt=%[[PLUGIN_TARGET]]/%[[PLUGIN_TARGET]].vcxproj.filters
+shaker_home_props.tmplt=shaker_home.props
+solution_sln.tmplt=%[[PLUGIN_TARGET]].sln
+%[[else]]
 instance_cpp.tmplt=%[[INSTANCE_CLASS]].cpp
 instance_hpp.tmplt=%[[INSTANCE_CLASS]].hpp
 module_cpp.tmplt=%[[MODULE_CLASS]].cpp
@@ -6,4 +18,8 @@ plugin_props.tmplt=%[[PLUGIN_TARGET]].props
 plugin_rc.tmplt=%[[PLUGIN_TARGET]].rc
 plugin_vcxproj.tmplt=%[[PLUGIN_TARGET]].vcxproj
 plugin_vcxproj_filters.tmplt=%[[PLUGIN_TARGET]].vcxproj.filters
+%[[if:HAS_SOLUTION]]
+%[[else]]
 shaker_home_props.tmplt=shaker_home.props
+%[[endif]]
+%[[endif]]
