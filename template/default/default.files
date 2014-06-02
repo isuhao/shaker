@@ -7,6 +7,7 @@ plugin_props.tmplt=%[[PLUGIN_TARGET]]/%[[PLUGIN_TARGET]].props
 plugin_rc.tmplt=%[[PLUGIN_TARGET]]/%[[PLUGIN_TARGET]].rc
 plugin_vcxproj.tmplt=%[[PLUGIN_TARGET]]/%[[PLUGIN_TARGET]].vcxproj
 plugin_vcxproj_filters.tmplt=%[[PLUGIN_TARGET]]/%[[PLUGIN_TARGET]].vcxproj.filters
+plugin_vcxproj_user.tmplt=%[[PLUGIN_TARGET]]/%[[PLUGIN_TARGET]].vcxproj.user
 shaker_home_props.tmplt=shaker_home.props
 solution_sln.tmplt=%[[PLUGIN_TARGET]].sln
 %[[else]]
@@ -18,6 +19,7 @@ plugin_props.tmplt=%[[PLUGIN_TARGET]].props
 plugin_rc.tmplt=%[[PLUGIN_TARGET]].rc
 plugin_vcxproj.tmplt=%[[PLUGIN_TARGET]].vcxproj
 plugin_vcxproj_filters.tmplt=%[[PLUGIN_TARGET]].vcxproj.filters
+plugin_vcxproj_user.tmplt=%[[PLUGIN_TARGET]].vcxproj.user
 %[[if:HAS_SOLUTION]]
 %[[else]]
 shaker_home_props.tmplt=shaker_home.props
