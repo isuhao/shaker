@@ -69,21 +69,9 @@ def print_code(code, indent = ""):
 def stringify(arg):
 	return '"' + arg.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
-class Template:
-	def __init__(self, vars, name):
-		self.name = name
+class FileTemplate:
+	def __init__(self, vars):
 		self.vars = vars
-		self.files = {}
-		self.outdir = os.path.realpath(self.vars["PLUGIN_TARGET"])
-		if "SOLUTION" in self.vars:
-			self.outdir = os.path.realpath(self.vars["SOLUTION"])
-		self.source = os.path.join(os.path.dirname(os.path.realpath(__file__)), "template", name)
-		files = self.compile(os.path.join(self.source, name + ".files"))
-		text = self.produce(files)
-		for line in text.split('\n'):
-			line = line.split('=', 1)
-			if len(line) < 2: continue
-			self.files[line[0].strip()] = line[1].strip()
 
 	def compile(self, path):
 		try:
@@ -165,17 +153,7 @@ class Template:
 				sys.exit(1)
 
 		return out
-		
-	def install(self):
-		keys = self.files.keys()
-		keys.sort()
-		for infile in keys:
-			#print os.path.join(self.source, infile), "->", os.path.join(self.outdir, self.files[infile])
-			code = self.compile(os.path.join(self.source, infile))
-			text = self.produce(code)
-			
-			self.output(text, os.path.join(self.outdir, self.files[infile]))
-			
+
 	def output(self, text, path):
 		try:
 			directory = os.path.dirname(path)
@@ -187,3 +165,29 @@ class Template:
 		except IOError as e:
 			print "%s: error %s: %s" % (path, e.errno, e.strerror)
 			sys.exit(1)
+
+	def generate(self, tmplt, dest):
+		self.output(self.produce(self.compile(tmplt)), dest)
+
+class Template(FileTemplate):
+	def __init__(self, vars, name):
+		FileTemplate.__init__(self, vars)
+		self.name = name
+		self.files = {}
+		self.outdir = os.path.realpath(self.vars["PLUGIN_TARGET"])
+		if "SOLUTION" in self.vars:
+			self.outdir = os.path.realpath(self.vars["SOLUTION"])
+		self.source = os.path.join(os.path.dirname(os.path.realpath(__file__)), "template", name)
+		files = self.compile(os.path.join(self.source, name + ".files"))
+		text = self.produce(files)
+		for line in text.split('\n'):
+			line = line.split('=', 1)
+			if len(line) < 2: continue
+			self.files[line[0].strip()] = line[1].strip()
+
+	def install(self):
+		keys = self.files.keys()
+		keys.sort()
+		for infile in keys:
+			#print os.path.join(self.source, infile), "->", os.path.join(self.outdir, self.files[infile])
+			self.generate(os.path.join(self.source, infile), os.path.join(self.outdir, self.files[infile]))
