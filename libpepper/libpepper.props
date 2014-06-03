@@ -3,7 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>$(ProjectDir)..\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\include;$(NACL_SDK)\include\win;$(IncludePath)</IncludePath>
     <TargetName>$(ProjectName)$(NAME_SUFFIX)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup>

@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <NACL_SDK>c:\code\google\nacl_sdk\pepper_34</NACL_SDK>
+    <NACL_SDK>%[[NACL_SDK]]</NACL_SDK>
   </PropertyGroup>
   <PropertyGroup>
     <IncludePath>$(NACL_SDK)\include;$(IncludePath)</IncludePath>
