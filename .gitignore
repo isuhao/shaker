@@ -59,3 +59,6 @@ docs/_build/
 *.suo
 *.orig
 *.user
+/libpepper/libpepper.vcxproj
+/libpepper/libpepper.vcxproj.filters
+/vstudio/salt.props
