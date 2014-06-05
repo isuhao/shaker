@@ -43,10 +43,19 @@
   <ItemGroup>
 	%[[NACL_INCLUDES]]
     <ClInclude Include="..\include\shaker\cpp\logger.hpp" />
+    <ClInclude Include="..\include\shaker\gfx\alpha_bitmap.hpp" />
+    <ClInclude Include="..\include\shaker\gfx\basic.hpp" />
+    <ClInclude Include="..\include\shaker\gfx\bitmap.hpp" />
+    <ClInclude Include="..\include\shaker\gfx\canvas.hpp" />
+    <ClInclude Include="..\include\shaker\gfx\font.hpp" />
+    <ClInclude Include="..\include\shaker\gfx\palette_bitmap.hpp" />
+    <ClInclude Include="..\src\shaker\gfx\builtin_font.hpp" />
   </ItemGroup>
   <ItemGroup>
 	%[[NACL_SOURCES]]
     <ClCompile Include="..\src\shaker\cpp\logger.cc" />
+    <ClCompile Include="..\src\shaker\gfx\builtin_font.cpp" />
+    <ClCompile Include="..\src\shaker\gfx\canvas.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

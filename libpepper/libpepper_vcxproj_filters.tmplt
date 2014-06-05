@@ -20,17 +20,56 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Shaker\Header Files\gfx">
+      <UniqueIdentifier>{ad42d0ff-cd2a-4424-9fe0-6fb352f74c8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaker\Source Files\gfx">
+      <UniqueIdentifier>{db535b7a-1689-4a23-b4e7-61ba2d3385a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaker\Source Files\cpp">
+      <UniqueIdentifier>{a1be4d69-83d7-4c9c-9939-dbce41a8f1fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaker\Header Files\cpp">
+      <UniqueIdentifier>{ca19213e-791a-434b-9786-472308dabe74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
 	%[[NACL_FILTERED_INCLUDES]]
     <ClInclude Include="..\include\shaker\cpp\logger.hpp">
-      <Filter>Shaker\Header Files</Filter>
+      <Filter>Shaker\Header Files\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\shaker\gfx\basic.hpp">
+      <Filter>Shaker\Header Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\shaker\gfx\canvas.hpp">
+      <Filter>Shaker\Header Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\shaker\gfx\font.hpp">
+      <Filter>Shaker\Header Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shaker\gfx\builtin_font.hpp">
+      <Filter>Shaker\Source Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\shaker\gfx\alpha_bitmap.hpp">
+      <Filter>Shaker\Header Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\shaker\gfx\bitmap.hpp">
+      <Filter>Shaker\Header Files\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\shaker\gfx\palette_bitmap.hpp">
+      <Filter>Shaker\Header Files\gfx</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
 	%[[NACL_FILTERED_SOURCES]]
     <ClCompile Include="..\src\shaker\cpp\logger.cc">
-      <Filter>Shaker\Source Files</Filter>
+      <Filter>Shaker\Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaker\gfx\builtin_font.cpp">
+      <Filter>Shaker\Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaker\gfx\canvas.cpp">
+      <Filter>Shaker\Source Files\gfx</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
