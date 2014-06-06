@@ -11,6 +11,8 @@ namespace gfx { namespace font
 		static const int glyph_width = 7;
 		static const int glyph_stride = glyph_width;
 		static const int glyph_height = sizeof(pixmap) / (glyph_stride * glyphs);
+		static const int glyph_desc = 3;
+		static const int glyph_asc = glyph_height - glyph_desc;
 		static const int interline = 2;
 
 		int glyph_id(char c)
@@ -118,6 +120,16 @@ namespace gfx { namespace font
 	size_t BuiltIn::height() const
 	{
 		return glyph_height;
+	}
+
+	size_t BuiltIn::asc() const
+	{
+		return glyph_asc;
+	}
+
+	size_t BuiltIn::desc() const
+	{
+		return glyph_desc;
 	}
 
 	size_t BuiltIn::line_height() const

@@ -25,7 +25,7 @@ namespace gfx
 			if (x > w)
 				return false;
 
-			ox = -x;
+			ox = x;
 			w -= x;
 			x = 0;
 		}
@@ -36,7 +36,7 @@ namespace gfx
 			if (y > h)
 				return false;
 
-			oy = -y;
+			oy = y;
 			h -= y;
 			y = 0;
 		}
@@ -48,7 +48,7 @@ namespace gfx
 			w = m_width - x;
 
 		if (m_height - y < h)
-			h = y - m_height;
+			h = m_height - y;
 
 		if (!w || !h)
 			return false;
@@ -126,7 +126,7 @@ namespace gfx
 		for (int y = 0; y < h; ++y)
 		{
 			uint32_t* dst = dest + y * m_stride;
-			auto src = sourceLine(source, y, bmp.m_stride);
+			auto src = sourceLine(source, y, bmp.m_stride, w);
 
 			for (int x = 0; x < w; ++x)
 				copy(src, dst);
@@ -152,13 +152,13 @@ namespace gfx
 		if (mirrored)
 		{
 			paint(x, y, w, h, offset_x, offset_y, bmp,
-				[](const uint32_t* source, int y, int stride){ return source + (y + 1) * stride - 1; },
+				[](const uint32_t* source, int y, int stride, int width){ return source + y * stride + width - 1; },
 				[](const uint32_t*& src, uint32_t*& dst){ *dst++ = *src--; });
 		}
 		else
 		{
 			paint(x, y, w, h, offset_x, offset_y, bmp,
-				[](const uint32_t* source, int y, int stride){ return source + y * stride; },
+				[](const uint32_t* source, int y, int stride, int){ return source + y * stride; },
 				[](const uint32_t*& src, uint32_t*& dst){ *dst++ = *src++; });
 		}
 	}
@@ -229,13 +229,13 @@ namespace gfx
 		if (mirrored)
 		{
 			paint(x, y, w, h, offset_x, offset_y, bmp,
-				[](const uint32_t* source, int y, int stride){ return source + (y + 1) * stride - 1; },
+				[](const uint32_t* source, int y, int stride, int width){ return source + y * stride + width - 1; },
 				[blend](const uint32_t*& src, uint32_t*& dst){ blend(src, dst)--; });
 		}
 		else
 		{
 			paint(x, y, w, h, offset_x, offset_y, bmp,
-				[](const uint32_t* source, int y, int stride){ return source + y * stride; },
+				[](const uint32_t* source, int y, int stride, int){ return source + y * stride; },
 				[blend](const uint32_t*& src, uint32_t*& dst){ blend(src, dst)++; });
 		}
 	}
@@ -307,13 +307,13 @@ namespace gfx
 		if (mirrored)
 		{
 			paint(x, y, w, h, offset_x, offset_y, bmp,
-				[](const uint8_t* source, int y, int stride){ return source + (y + 1) * stride - 1; },
+				[](const uint8_t* source, int y, int stride, int width){ return source + y * stride + width - 1; },
 				[blend](const uint8_t*& src, uint32_t*& dst){ blend(src, dst)--; });
 		}
 		else
 		{
 			paint(x, y, w, h, offset_x, offset_y, bmp,
-				[](const uint8_t* source, int y, int stride){ return source + y * stride; },
+				[](const uint8_t* source, int y, int stride, int){ return source + y * stride; },
 				[blend](const uint8_t*& src, uint32_t*& dst){ blend(src, dst)++; });
 		}
 	}

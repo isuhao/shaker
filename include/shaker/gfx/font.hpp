@@ -17,6 +17,8 @@ namespace gfx
 			virtual ~Font() {}
 
 			virtual size_t height() const = 0;
+			virtual size_t asc() const = 0;
+			virtual size_t desc() const = 0;
 			virtual size_t line_height() const = 0;
 			virtual void paint(const std::string& text, int x, int y, uint32_t color, Canvas* canvas) const = 0;
 			virtual std::tuple<size_t, size_t> textSize(const std::string& text) const = 0;
