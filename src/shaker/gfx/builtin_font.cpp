@@ -28,88 +28,8 @@ namespace gfx { namespace font
 
 		void paint(int glyph, int x, int y, const uint32_t* palette, Canvas* canvas)
 		{
-#if 0
-			int g_w = glyph_width;
-			int g_h = glyph_height;
-
-			const uint8_t* src = pixmap + glyph * glyph_stride * glyph_height;
-
-			if (x < 0)
-			{
-				x = -x;
-				if (x > g_w)
-					return;
-
-				src += x;
-				g_w -= x;
-				x = 0;
-			}
-
-			if (y < 0)
-			{
-				y = -y;
-				if (y > g_h)
-					return;
-
-				src += y * glyph_stride;
-				g_h -= y;
-				y = 0;
-			}
-
-			if (x >= canvas->width() || y >= canvas->height())
-				return;
-
-			if (canvas->width() - x < g_w)
-				g_w = canvas->width() - x;
-
-			if (canvas->height() - y < g_h)
-				g_h = y - canvas->height();
-
-			if (!g_w || !g_h)
-				return;
-
-			uint32_t* dst = canvas->data() + x + y * canvas->stride();
-			PP_ImageDataFormat format = pp::ImageData::GetNativeImageDataFormat();
-
-			for (y = 0; y < g_h; ++y)
-			{
-				auto src_row = src + y * glyph_stride;
-				auto dst_row = dst + y * canvas->stride();
-
-				for (x = 0; x < g_w; ++x)
-				{
-					auto r = *src_row++;
-					auto g = *src_row++;
-					auto b = *src_row++;
-					auto a = *src_row++;
-					if (!a)
-					{
-						dst_row++;
-						continue;
-					}
-
-					auto under = *dst_row;
-					uint8_t
-						R = (under >> 16) & 0xFF,
-						G = (under >> 8) & 0xFF,
-						B = (under)& 0xFF;
-
-					if (format != PP_IMAGEDATAFORMAT_BGRA_PREMUL)
-						std::swap(R, B);
-
-					*dst_row++ =
-						RGB24(
-						blend(a, r, R),
-						blend(a, g, G),
-						blend(a, b, B)
-						);
-				}
-			}
-#else
-			//const uint8_t* src = pixmap + glyph * glyph_stride * glyph_height;
 			const uint8_t* src = pixmap + glyph * glyph_width * glyph_height;
 			canvas->paint(x, y, gfx::PaletteBitmap{ (uint8_t*)src, palette, glyph_width, glyph_height });
-#endif
 		}
 	}
 
@@ -118,22 +38,22 @@ namespace gfx { namespace font
 		return std::make_shared<BuiltIn>();
 	}
 
-	size_t BuiltIn::height() const
+	long BuiltIn::height() const
 	{
 		return glyph_height;
 	}
 
-	size_t BuiltIn::asc() const
+	long BuiltIn::asc() const
 	{
 		return glyph_asc;
 	}
 
-	size_t BuiltIn::desc() const
+	long BuiltIn::desc() const
 	{
 		return glyph_desc;
 	}
 
-	size_t BuiltIn::line_height() const
+	long BuiltIn::line_height() const
 	{
 		return glyph_height + interline;
 	}

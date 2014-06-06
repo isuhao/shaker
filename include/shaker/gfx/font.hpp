@@ -16,10 +16,10 @@ namespace gfx
 		{
 			virtual ~Font() {}
 
-			virtual size_t height() const = 0;
-			virtual size_t asc() const = 0;
-			virtual size_t desc() const = 0;
-			virtual size_t line_height() const = 0;
+			virtual long height() const = 0;
+			virtual long asc() const = 0;
+			virtual long desc() const = 0;
+			virtual long line_height() const = 0;
 			virtual void paint(const std::string& utf8, int x, int y, uint32_t color, Canvas* canvas) const = 0;
 			virtual std::tuple<size_t, size_t> textSize(const std::string& utf8) const = 0;
 		};
@@ -27,6 +27,7 @@ namespace gfx
 		typedef std::shared_ptr<Font> ptr;
 
 		ptr builtin();
+		ptr load(const std::string& family_name, int size, bool bold, bool italic);
 	}
 }
 

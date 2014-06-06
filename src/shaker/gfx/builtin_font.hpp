@@ -10,10 +10,10 @@ namespace gfx
 		class BuiltIn : public Font
 		{
 		public:
-			size_t height() const override;
-			size_t asc() const override;
-			size_t desc() const override;
-			size_t line_height() const override;
+			long height() const override;
+			long asc() const override;
+			long desc() const override;
+			long line_height() const override;
 			void paint(const std::string& utf8, int x, int y, uint32_t color, Canvas* canvas) const override;
 			std::tuple<size_t, size_t> textSize(const std::string& utf8) const override;
 		};
