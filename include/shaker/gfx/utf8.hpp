@@ -56,13 +56,14 @@ namespace utf8
 			switch (length) {
 			case 1:
 				UTF8_TAKE_FIRST();
-				UTF8_MOVE();
+				++it;
 				return true;
 			case 2:
 				UTF8_TAKE_FIRST();
 				UTF8_MOVE();
 				UTF8_SHIFT(6, 0x7FF);
 				UTF8_ADD_MASK(0x3F);
+				++it;
 				return true;
 			case 3:
 				UTF8_TAKE_FIRST();
@@ -71,6 +72,7 @@ namespace utf8
 				UTF8_ADD(6, 0xFFF);
 				UTF8_MOVE();
 				UTF8_ADD_MASK(0x3F);
+				++it;
 				return true;
 			case 4:
 				UTF8_TAKE_FIRST();
@@ -81,6 +83,7 @@ namespace utf8
 				UTF8_ADD(6, 0xFFF);
 				UTF8_MOVE();
 				UTF8_ADD_MASK(0x3F);
+				++it;
 				return true;
 			}
 
@@ -112,7 +115,7 @@ namespace utf8
 		return result;
 	}
 
-	ustring to32(const string& s)
+	inline ustring to32(const string& s)
 	{
 		ustring out;
 		out.reserve(s.length());
