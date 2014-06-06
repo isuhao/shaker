@@ -27,6 +27,7 @@ namespace gfx
 		//int stride() const { return m_stride; }
 
 		void rect(uint32_t color, int x, int y, int w, int h);
+		void put_pixel(int x, int y, uint32_t color);
 		void paint(int x, int y, const Bitmap& bmp);
 		void paint(int x, int y, const AlphaBitmap& bmp);
 		void paint(int x, int y, const PaletteBitmap& bmp);

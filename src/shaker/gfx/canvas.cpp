@@ -117,6 +117,15 @@ namespace gfx
 		}
 	}
 
+	void Canvas::put_pixel(int x, int y, uint32_t color)
+	{
+		if (x < 0 || y < 0 || x >= m_width || y >= m_height)
+			return;
+
+		auto dest = m_data + x + y * m_stride;
+		*dest = color;
+	}
+
 	template <typename BitmapT, typename SourceLine, typename Copy>
 	void Canvas::paint(int x, int y, int w, int h, int ox, int oy, const BitmapT& bmp, SourceLine sourceLine, Copy copy)
 	{
