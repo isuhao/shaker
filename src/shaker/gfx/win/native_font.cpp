@@ -25,10 +25,49 @@ namespace std
 
 namespace gfx { namespace font {
 	namespace win {
+		//GetFontLanguageInfo
+		//GetCharacterPlacement
 
 		static const size_t interline = 2;
 
 		gdi_ptr gdi_font(const std::string& family_name, int size, bool bold, bool italic);
+
+		std::ustring point2indices(HDC dc, const std::ustring& code_points)
+		{
+			std::wstring copy;
+			copy.reserve(code_points.length() + 1);
+			for (auto& cp : code_points)
+				copy.push_back(cp);
+
+			if (copy.empty())
+				return{};
+
+			std::vector<wchar_t> glyphs;
+			glyphs.resize(copy.size());
+			if (glyphs.size() != copy.size())
+				return{};
+
+			std::vector<UINT> order;
+			order.resize(copy.size());
+			if (order.size() != copy.size())
+				return{};
+
+			auto flags = GetFontLanguageInfo(dc) & FLI_MASK; // GCP_LIGATE
+			GCP_RESULTS results = { sizeof(results) };
+			results.lpOrder = &order[0];
+			results.lpGlyphs = &glyphs[0];
+			results.nGlyphs = glyphs.size();
+
+			if (!GetCharacterPlacement(dc, copy.c_str(), copy.length(), 0, &results, flags | GCP_LIGATE))
+				return{};
+
+			std::ustring indices;
+			indices.reserve(results.nGlyphs);
+			for (UINT i = 0; i < results.nGlyphs; ++i)
+				indices.push_back(results.lpGlyphs[results.lpOrder[i]]);
+
+			return indices;
+		}
 
 		// Note that, for the GGO_GRAYn_BITMAP values, the function retrieves a glyph bitmap
 		// that contains n^2+1 (n squared plus one) levels of gray.
@@ -39,8 +78,8 @@ namespace gfx { namespace font {
 			return (uint32_t)src * out_max / max;
 		}
 
-		GdiGlyph::GdiGlyph(HDC dc, uint32_t code_point)
-			: m_code_point(code_point)
+		GdiGlyph::GdiGlyph(HDC dc, uint32_t id)
+			: m_glyph_id(id)
 			, m_advance(0)
 			, m_loaded(false)
 			, m_width(0)
@@ -49,7 +88,7 @@ namespace gfx { namespace font {
 			MAT2 mat2 = {};
 			mat2.eM11.value = mat2.eM22.value = 1;
 			GLYPHMETRICS gm = {};
-			int size = GetGlyphOutline(dc, m_code_point, GGO_GRAY8_BITMAP, &gm, 0, nullptr, &mat2);
+			int size = GetGlyphOutline(dc, m_glyph_id, GGO_GRAY8_BITMAP | GGO_GLYPH_INDEX, &gm, 0, nullptr, &mat2);
 			if (size == GDI_ERROR)
 				return;
 
@@ -65,7 +104,7 @@ namespace gfx { namespace font {
 			if (!bitmap)
 				return;
 
-			if (GetGlyphOutline(dc, m_code_point, GGO_GRAY8_BITMAP, &gm, size, bitmap.get(), &mat2) == GDI_ERROR)
+			if (GetGlyphOutline(dc, m_glyph_id, GGO_GRAY8_BITMAP | GGO_GLYPH_INDEX, &gm, size, bitmap.get(), &mat2) == GDI_ERROR)
 				return;
 
 			size_t length = m_width * m_height;
@@ -144,26 +183,59 @@ namespace gfx { namespace font {
 			return m_space_adv;
 		}
 
-		long GdiFont::adv(uint32_t code_point)
+		long GdiFont::adv(uint32_t id)
 		{
-			auto g = glyph(code_point);
+			auto g = glyph(id);
 			return g ? g->advance() : 0;
 		}
 
-		glyph_ptr GdiFont::glyph(uint32_t code_point)
+		glyph_ptr GdiFont::glyph(uint32_t id)
 		{
 			std::lock_guard<std::mutex> lock(m);
 
 			glyph_ptr ret;
 			for (auto&& glyph : cache)
 			{
-				if (glyph->code_point() == code_point)
+				if (glyph->id() == id)
 					return glyph;
 			}
 
-			ret = std::make_shared<GdiGlyph>(m_hDC, code_point);
+			ret = std::make_shared<GdiGlyph>(m_hDC, id);
 			cache.push_back(ret);
 			return ret;
+		}
+
+		glyph_text GdiFont::indices(const std::ustring& code_points)
+		{
+			glyph_text out;
+			glyph_line line;
+			std::ustring word;
+
+			auto cur = code_points.begin(), end = code_points.end();
+			for (auto&& cp : code_points)
+			{
+				if (cp == ' ')
+				{
+					line.push_back(std::move(point2indices(m_hDC, word)));
+					word.clear();
+					continue;
+				}
+
+				if (cp == '\n')
+				{
+					line.push_back(std::move(point2indices(m_hDC, word)));
+					out.push_back(std::move(line));
+					word.clear();
+					line.clear(); // unneeded?
+					continue;
+				}
+
+				word.push_back(cp);
+			}
+
+			line.push_back(std::move(point2indices(m_hDC, word)));
+			out.push_back(std::move(line));
+			return out;
 		}
 
 		gdi_ptr Repo::_load(const std::string& family_name, int size, bool bold, bool italic)
@@ -211,64 +283,57 @@ namespace gfx { namespace font {
 
 			y += rep->asc();
 
-			auto text = utf8::to32(utf8);
-			for (auto&& c : text)
+			auto text = rep->indices(utf8::to32(utf8));
+			for (auto&& line : text)
 			{
-				if (c == ' ')
+				for (auto&& word : line)
 				{
+					for (auto&& id : word)
+					{
+						auto glyph = rep->glyph(id);
+						if (!glyph)
+							continue;
+
+						if (glyph->loaded())
+						{
+							canvas->paint(
+								x - glyph->offset_x(), y - glyph->offset_y(),
+								gfx::PaletteBitmap{ (uint8_t*)glyph->pixmap(), palette, glyph->width(), glyph->height() }
+							);
+						}
+
+						x += glyph->advance();
+					}
+
 					x += rep->space();
-					continue;
-				}
-				if (c == '\n')
-				{
-					y += line_height();
-					x = cr;
-					continue;
 				}
 
-				auto glyph = rep->glyph(c);
-				if (!glyph)
-					continue;
-
-				if (glyph->loaded())
-				{
-					canvas->paint(
-						x - glyph->offset_x(), y - glyph->offset_y(),
-						gfx::PaletteBitmap{ (uint8_t*)glyph->pixmap(), palette, glyph->width(), glyph->height() }
-					);
-				}
-
-				x += glyph->advance();
+				y += line_height();
+				x = cr;
 			}
 		}
 
 		std::tuple<size_t, size_t> Font::textSize(const std::string& utf8) const
 		{
 			size_t width = 0;
-			size_t height = 1;
-			size_t line = 0;
+			size_t height = 0;
 
-			auto text = utf8::to32(utf8);
-			for (auto&& c : text)
+			auto text = rep->indices(utf8::to32(utf8));
+			for (auto&& line : text)
 			{
-				if (c == '\n')
+				height++;
+				size_t length = 0;
+				for (auto&& word : line)
 				{
-					height++;
-					if (width < line)
-						width = line;
-					line = 0;
-					continue;
+					for (auto&& glyph : word)
+						length += rep->adv(glyph);
+					length += rep->space();
 				}
-				if (c == ' ')
-				{
-					line += rep->space();
-					continue;
-				}
+				length -= rep->space();
 
-				line += rep->adv(c);
+				if (width < length)
+					width = length;
 			}
-			if (width < line)
-				width = line;
 
 			return std::make_tuple( width, height * rep->height() + (height - 1) * rep->interline());
 		}

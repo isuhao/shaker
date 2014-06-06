@@ -2,6 +2,7 @@
 #define __GFX_WIN_NATIVE_FONT_HPP__
 
 #include <shaker/gfx/font.hpp>
+#include <shaker/gfx/utf8.hpp>
 #include <memory>
 #include <vector>
 #include <mutex>
@@ -17,7 +18,7 @@ namespace gfx
 
 			class GdiGlyph
 			{
-				uint32_t m_code_point;
+				uint32_t m_glyph_id;
 				long m_advance;
 				bool m_loaded;
 				std::vector<uint8_t> m_pixmap;
@@ -26,8 +27,8 @@ namespace gfx
 				int m_offset_x;
 				int m_offset_y;
 			public:
-				GdiGlyph(HDC dc, uint32_t code_point);
-				uint32_t code_point() const { return m_code_point; }
+				GdiGlyph(HDC dc, uint32_t id);
+				uint32_t id() const { return m_glyph_id; }
 				long advance() const { return m_advance; }
 				bool loaded() const { return m_loaded; }
 				const uint8_t* pixmap() { return m_pixmap.data(); }
@@ -38,6 +39,10 @@ namespace gfx
 			};
 
 			typedef std::shared_ptr<GdiGlyph> glyph_ptr;
+
+			typedef std::ustring glyph_word;
+			typedef std::vector<glyph_word> glyph_line;
+			typedef std::vector<glyph_line> glyph_text;
 
 			class GdiFont
 			{
@@ -63,8 +68,9 @@ namespace gfx
 				long desc() const { return m_metrics.tmDescent; }
 				long interline() const { return m_metrics.tmExternalLeading; }
 				long space();
-				long adv(uint32_t code_point);
-				glyph_ptr glyph(uint32_t code_point);
+				long adv(uint32_t id);
+				glyph_ptr glyph(uint32_t id);
+				glyph_text indices(const std::ustring& code_points);
 			};
 
 			typedef std::shared_ptr<GdiFont> gdi_ptr;
