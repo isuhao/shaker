@@ -1,5 +1,6 @@
 #include "builtin_font.hpp"
 #include <shaker/gfx/palette_bitmap.hpp>
+#include <shaker/gfx/utf8.hpp>
 
 namespace gfx { namespace font
 {
@@ -7,7 +8,7 @@ namespace gfx { namespace font
 	{
 #include "glyphs.inl"
 
-		static const int glyphs = sizeof(alphabet)-1;
+		static const int glyphs = sizeof(alphabet)/sizeof(alphabet[0])-1;
 		static const int glyph_width = 7;
 		static const int glyph_stride = glyph_width;
 		static const int glyph_height = sizeof(pixmap) / (glyph_stride * glyphs);
@@ -15,7 +16,7 @@ namespace gfx { namespace font
 		static const int glyph_asc = glyph_height - glyph_desc;
 		static const int interline = 2;
 
-		int glyph_id(char c)
+		int glyph_id(wchar_t c)
 		{
 			for (int i = 0; i < glyphs; ++i)
 			{
@@ -137,7 +138,7 @@ namespace gfx { namespace font
 		return glyph_height + interline;
 	}
 
-	void BuiltIn::paint(const std::string& text, int x, int y, uint32_t color, Canvas* canvas) const
+	void BuiltIn::paint(const std::string& utf8, int x, int y, uint32_t color, Canvas* canvas) const
 	{
 		uint32_t palette[256];
 		color &= 0x00FFFFFF;
@@ -146,6 +147,7 @@ namespace gfx { namespace font
 
 		auto cr = x;
 
+		auto text = utf8::to32(utf8);
 		for (auto&& c : text)
 		{
 			if (c == ' ')
@@ -166,12 +168,13 @@ namespace gfx { namespace font
 		}
 	}
 
-	std::tuple<size_t, size_t> BuiltIn::textSize(const std::string& text) const
+	std::tuple<size_t, size_t> BuiltIn::textSize(const std::string& utf8) const
 	{
 		size_t width = 0;
 		size_t height = 1;
 		size_t line = 0;
 
+		auto text = utf8::to32(utf8);
 		for (auto&& c : text)
 		{
 			if (c == '\n')

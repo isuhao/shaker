@@ -59,6 +59,9 @@
     <ClInclude Include="..\include\shaker\gfx\palette_bitmap.hpp">
       <Filter>Shaker\Header Files\gfx</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\shaker\gfx\utf8.hpp">
+      <Filter>Shaker\Header Files\gfx</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
 	%[[NACL_FILTERED_SOURCES]]

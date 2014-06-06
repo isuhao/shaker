@@ -49,6 +49,7 @@
     <ClInclude Include="..\include\shaker\gfx\canvas.hpp" />
     <ClInclude Include="..\include\shaker\gfx\font.hpp" />
     <ClInclude Include="..\include\shaker\gfx\palette_bitmap.hpp" />
+    <ClInclude Include="..\include\shaker\gfx\utf8.hpp" />
     <ClInclude Include="..\src\shaker\gfx\builtin_font.hpp" />
   </ItemGroup>
   <ItemGroup>

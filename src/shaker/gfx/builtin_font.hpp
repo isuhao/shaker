@@ -14,8 +14,8 @@ namespace gfx
 			size_t asc() const override;
 			size_t desc() const override;
 			size_t line_height() const override;
-			void paint(const std::string& text, int x, int y, uint32_t color, Canvas* canvas) const override;
-			std::tuple<size_t, size_t> textSize(const std::string& text) const override;
+			void paint(const std::string& utf8, int x, int y, uint32_t color, Canvas* canvas) const override;
+			std::tuple<size_t, size_t> textSize(const std::string& utf8) const override;
 		};
 	}
 }
