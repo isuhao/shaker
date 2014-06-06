@@ -32,6 +32,9 @@
     <Filter Include="Shaker\Header Files\cpp">
       <UniqueIdentifier>{ca19213e-791a-434b-9786-472308dabe74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaker\Source Files\gfx\win">
+      <UniqueIdentifier>{55d7813c-684d-4d4a-8ad8-a3f8f6a81e1c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
 	%[[NACL_FILTERED_INCLUDES]]
@@ -62,6 +65,9 @@
     <ClInclude Include="..\include\shaker\gfx\utf8.hpp">
       <Filter>Shaker\Header Files\gfx</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\shaker\gfx\win\native_font.hpp">
+      <Filter>Shaker\Source Files\gfx\win</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
 	%[[NACL_FILTERED_SOURCES]]
@@ -73,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="..\src\shaker\gfx\canvas.cpp">
       <Filter>Shaker\Source Files\gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaker\gfx\win\native_font.cpp">
+      <Filter>Shaker\Source Files\gfx\win</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

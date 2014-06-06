@@ -51,12 +51,14 @@
     <ClInclude Include="..\include\shaker\gfx\palette_bitmap.hpp" />
     <ClInclude Include="..\include\shaker\gfx\utf8.hpp" />
     <ClInclude Include="..\src\shaker\gfx\builtin_font.hpp" />
+    <ClInclude Include="..\src\shaker\gfx\win\native_font.hpp" />
   </ItemGroup>
   <ItemGroup>
 	%[[NACL_SOURCES]]
     <ClCompile Include="..\src\shaker\cpp\logger.cc" />
     <ClCompile Include="..\src\shaker\gfx\builtin_font.cpp" />
     <ClCompile Include="..\src\shaker\gfx\canvas.cpp" />
+    <ClCompile Include="..\src\shaker\gfx\win\native_font.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
