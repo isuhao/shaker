@@ -32,15 +32,13 @@ namespace gfx { namespace font {
 
 		gdi_ptr gdi_font(const std::string& family_name, int size, bool bold, bool italic);
 
-		std::ustring point2indices(HDC dc, const std::ustring& code_points)
+		glyph_word point2indices(HDC dc, const std::ustring& code_points)
 		{
 			std::wstring copy;
 			copy.reserve(code_points.length() + 1);
 			for (auto& cp : code_points)
 				copy.push_back(cp);
-
-			if (copy.empty())
-				return{};
+			copy.push_back(0);
 
 			std::vector<wchar_t> glyphs;
 			glyphs.resize(copy.size());
@@ -52,19 +50,32 @@ namespace gfx { namespace font {
 			if (order.size() != copy.size())
 				return{};
 
-			auto flags = GetFontLanguageInfo(dc) & FLI_MASK; // GCP_LIGATE
+			std::vector<int> dx;
+			dx.resize(copy.size());
+			if (dx.size() != copy.size())
+				return{};
+
+			auto flags = GetFontLanguageInfo(dc) & FLI_MASK; // GCP_LIGATE?
+			flags |= GCP_LIGATE | GCP_REORDER;
 			GCP_RESULTS results = { sizeof(results) };
 			results.lpOrder = &order[0];
 			results.lpGlyphs = &glyphs[0];
+			results.lpDx = &dx[0];
 			results.nGlyphs = glyphs.size();
 
-			if (!GetCharacterPlacement(dc, copy.c_str(), copy.length(), 0, &results, flags | GCP_LIGATE))
+			if (!GetCharacterPlacement(dc, copy.c_str(), copy.length(), 0, &results, flags))
 				return{};
 
-			std::ustring indices;
-			indices.reserve(results.nGlyphs);
-			for (UINT i = 0; i < results.nGlyphs; ++i)
-				indices.push_back(results.lpGlyphs[results.lpOrder[i]]);
+			while (results.nGlyphs && !results.lpGlyphs[results.nGlyphs - 1])
+				--results.nGlyphs;
+
+			glyph_word indices;
+			if (results.nGlyphs)
+			{
+				indices.reserve(results.nGlyphs);
+				for (UINT i = 0; i < results.nGlyphs; ++i)
+					indices.push_back({ results.lpGlyphs[results.lpOrder[i]], results.lpDx[results.lpOrder[i]] });
+			}
 
 			return indices;
 		}
@@ -288,9 +299,9 @@ namespace gfx { namespace font {
 			{
 				for (auto&& word : line)
 				{
-					for (auto&& id : word)
+					for (auto&& info : word)
 					{
-						auto glyph = rep->glyph(id);
+						auto glyph = rep->glyph(info.id);
 						if (!glyph)
 							continue;
 
@@ -302,7 +313,7 @@ namespace gfx { namespace font {
 							);
 						}
 
-						x += glyph->advance();
+						x += info.dx; //glyph->advance();
 					}
 
 					x += rep->space();

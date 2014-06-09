@@ -40,7 +40,12 @@ namespace gfx
 
 			typedef std::shared_ptr<GdiGlyph> glyph_ptr;
 
-			typedef std::ustring glyph_word;
+			struct GlyphInfo
+			{
+				uint32_t id;
+				int dx;
+			};
+			typedef std::vector<GlyphInfo> glyph_word;
 			typedef std::vector<glyph_word> glyph_line;
 			typedef std::vector<glyph_line> glyph_text;
 
@@ -69,6 +74,7 @@ namespace gfx
 				long interline() const { return m_metrics.tmExternalLeading; }
 				long space();
 				long adv(uint32_t id);
+				long adv(const GlyphInfo& nfo) const { return nfo.dx; }
 				glyph_ptr glyph(uint32_t id);
 				glyph_text indices(const std::ustring& code_points);
 			};
