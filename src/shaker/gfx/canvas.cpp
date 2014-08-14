@@ -188,9 +188,6 @@ namespace gfx
 		if (!update_pos(x, y, w, h, offset_x, offset_y))
 			return;
 
-		auto dest = m_data + x + y * m_stride;
-		auto source = bmp.m_data + offset_x + offset_y * bmp.m_stride;
-
 		PP_ImageDataFormat format = pp::ImageData::GetNativeImageDataFormat();
 		auto blend = [format](const uint32_t*& src, uint32_t*& dst) -> const uint32_t*&
 		{
@@ -265,8 +262,6 @@ namespace gfx
 		if (!update_pos(x, y, w, h, offset_x, offset_y))
 			return;
 
-		auto dest = m_data + x + y * m_stride;
-		auto source = bmp.m_data + offset_x + offset_y * bmp.m_stride;
 		auto palette = bmp.m_palette;
 
 		PP_ImageDataFormat format = pp::ImageData::GetNativeImageDataFormat();

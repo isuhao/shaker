@@ -2,6 +2,9 @@
 #define __GFX_BASIC_HPP__
 
 #include <ppapi/cpp/image_data.h>
+#include <stdint.h>
+
+typedef uint32_t size_t;
 
 namespace gfx
 {

@@ -21,7 +21,7 @@ namespace pp
 		template <PP_LogLevel logLevel>
 		class Source
 		{
-			template <PP_LogLevel logLevel>
+			template <PP_LogLevel level>
 			friend class Severity;
 			Logger& parent_;
 			pp::Var source_;
@@ -43,7 +43,7 @@ namespace pp
 			template <typename... Args>
 			void utf8(std::ostream& o, PP_Var arg, Args&&... rest)
 			{
-				o << VarInterface().VarToUtf8(arg);
+				o << pp::Var(arg).AsString();
 				utf8(o, std::forward<Args>(rest)...);
 			}
 
@@ -87,7 +87,7 @@ namespace pp
 			template <typename... Args>
 			void utf8(std::ostream& o, PP_Var arg, Args&&... rest)
 			{
-				o << VarInterface().VarToUtf8(arg);
+				o << pp::Var(arg).AsString();
 				utf8(o, std::forward<Args>(rest)...);
 			}
 

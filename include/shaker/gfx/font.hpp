@@ -27,7 +27,7 @@ namespace gfx
 		typedef std::shared_ptr<Font> ptr;
 
 		ptr builtin();
-		ptr load(const std::string& family_name, int size, bool bold, bool italic);
+		//ptr load(const std::string& family_name, int size, bool bold, bool italic);
 	}
 }
 
